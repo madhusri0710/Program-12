@@ -1,7 +1,5 @@
-
 USE CollegeDB;
 
--- STUDENT TABLE
 CREATE TABLE Student (
     StudentID INT PRIMARY KEY,
     StudentName VARCHAR(50),
@@ -15,7 +13,6 @@ VALUES
 (1003, 'Kumar', 101);
 
 
--- DEPARTMENT TABLE
 CREATE TABLE Department (
     DepartmentID INT PRIMARY KEY,
     DepartmentName VARCHAR(50)
@@ -27,7 +24,6 @@ VALUES
 (102, 'Mathematics');
 
 
--- COURSE TABLE
 CREATE TABLE Course (
     CourseID INT PRIMARY KEY,
     CourseName VARCHAR(50)
@@ -40,7 +36,6 @@ VALUES
 (203, 'Mathematics');
 
 
--- ENROLLMENT TABLE
 CREATE TABLE Enrollment (
     EnrollmentID INT PRIMARY KEY,
     StudentID INT,
@@ -55,7 +50,6 @@ VALUES
 (4, 1003, 201);
 
 
--- CREATE VIEW
 CREATE VIEW StudentDetails AS
 SELECT
     Student.StudentName,
@@ -70,5 +64,4 @@ INNER JOIN Department
     ON Student.DepartmentID = Department.DepartmentID;
 
 
--- DISPLAY VIEW
 SELECT * FROM StudentDetails;
